@@ -1,0 +1,96 @@
+@use "variables" as var;
+
+.weather {
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 16px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-shadow: 0 10px 15px rgba(34, 34, 34, 0.2);
+    color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(33px);
+    background-blend-mode: overlay;
+  }
+
+  &__city {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .name {
+      font-size: 3rem;
+      color: var.$white;
+    }
+  }
+
+  &__information {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    color: var.$white;
+
+    .feeling {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .forecast {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+
+      > div {
+        display: flex;
+        gap: 10px
+      }
+
+      .up {
+        animation: bounce-up 1s infinite;
+      }
+
+      .down {
+        animation: bounce-down 1s infinite;
+      }
+    }
+
+    .items {
+      padding-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 250px;
+      margin: 0 auto;
+
+      > div {
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+}
+
+@keyframes bounce-down {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+@keyframes bounce-up {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}

@@ -1,12 +1,9 @@
-import {
-  ApiException,
-  ServiceUnexpectedException,
-} from "@mfe/react-utils";
-import axios from "axios";
-import { Err, err } from "neverthrow";
+import { ApiException, ServiceUnexpectedException } from '@/services/utils'
+import axios from 'axios'
+import { Err, err } from 'neverthrow'
 
-import { ErrorCodes } from "@/core/services/constants";
-import { GenericServiceException } from "@/core/services/exception";
+import { ErrorCodes } from '@/services/constants'
+import { GenericServiceException } from '@/services/exception'
 
 export function handleError(error: any): Err<never, any> {
   switch (error.response?.status) {
@@ -16,14 +13,14 @@ export function handleError(error: any): Err<never, any> {
           ErrorCodes.GenericServiceUnauthorized,
           error.message
         )
-      );
+      )
     case 404:
       return err(
         GenericServiceException.create(
           ErrorCodes.GenericServiceNotFound,
           error.message
         )
-      );
+      )
     case 500:
       return err(
         GenericServiceException.create(

@@ -1,9 +1,18 @@
-:global {
-  body {
-    background-color: rebeccapurple;
-  }
+@use "variables" as var;
 
-  body {
-    min-height: 100vh;
-  }
+@import url('./vendor/normalize.css');
+@import url('./fonts/nunito.css');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #f4f7f8, #abb0b6);
+  background-size: 200% 100%;
+  background-image: url('/images/background.jpeg');
+  background-size: cover;
+  background-position: top;
+  font-family: 'Nunito', sans-serif;
+  color: var.$white;
 }

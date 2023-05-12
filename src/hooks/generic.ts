@@ -6,6 +6,8 @@ export const useApiService = (service: any, request?: any) => {
   const [isLoading, setIsLoading] = useState(false)
 
   const execute = async () => {
+    setError(null)
+    setIsLoading(false)
     try {
       setIsLoading(true)
       const result = await service.execute(request)

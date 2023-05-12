@@ -1,3 +1,19 @@
 .home {
-  background-color: red;
+  min-height: 100vh;
+  display: grid;
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__container {
+    height: 100%;
+    min-height: 406px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
 }

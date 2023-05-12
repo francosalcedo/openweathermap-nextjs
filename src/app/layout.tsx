@@ -1,3 +1,5 @@
+import '@/styles/global.scss'
+
 export const metadata = {
   title: 'Ionix',
   description: 'Challenge by Franco',
