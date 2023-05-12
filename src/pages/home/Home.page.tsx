@@ -1,12 +1,18 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client"
 
 import { useStoreWeather } from '@/store/useStoreWeather'
 import styles from './Home.module.scss'
 import ResultsWeather from './components/ResultsWeather/ResultsWeather'
 import SearchBox from './components/SearchBox/SearchBox'
+import { useEffect } from 'react'
 
 const Home = () => {
-  const { cityQuery } = useStoreWeather()
+  const { cityQuery, setCityQuery } = useStoreWeather()
+
+  useEffect(() => {
+    setCityQuery(String(process.env.NEXT_PUBLIC_DEFAULT_CITY))
+  }, [])
 
   return (
     <div className={styles.home}>

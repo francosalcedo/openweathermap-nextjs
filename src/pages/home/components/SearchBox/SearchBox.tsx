@@ -31,6 +31,7 @@ const SearchBox = () => {
         value={value}
         onChange={({ target }) => setValue(target.value)}
         onKeyDown={onKeyChange}
+        placeholder={String(process.env.NEXT_PUBLIC_DEFAULT_CITY)}
       />
     </div>
   )
