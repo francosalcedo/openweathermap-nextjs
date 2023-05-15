@@ -13,7 +13,7 @@
     border-radius: 16px;
     background-size: 100%;
     background-repeat: no-repeat;
-    box-shadow: 0 10px 15px rgba(34, 34, 34, 0.2);
+    box-shadow: 0 10px 15px var.$box-shadow;
     color: rgba(0,0,0,0.8);
     backdrop-filter: blur(33px);
     background-blend-mode: overlay;
@@ -23,8 +23,17 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 15px;
+
     .name {
       font-size: 3rem;
+      color: var.$white;
+      margin: 0;
+      font-weight: normal;
+    }
+
+    .temp {
+      font-size: 3.5rem;
       color: var.$white;
     }
   }
@@ -58,20 +67,6 @@
 
       .down {
         animation: bounce-down 1s infinite;
-      }
-    }
-
-    .items {
-      padding-top: 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      max-width: 250px;
-      margin: 0 auto;
-
-      > div {
-        display: flex;
-        gap: 10px;
       }
     }
   }

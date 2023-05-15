@@ -1,6 +1,6 @@
 .home {
   min-height: 100vh;
-  display: grid;
+  padding: 15px;
 
   &__title {
     font-size: 2rem;
@@ -11,9 +11,9 @@
     min-height: 406px;
     width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 20px;
+    padding-top: 60px;
   }
 }

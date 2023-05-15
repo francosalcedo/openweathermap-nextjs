@@ -1,7 +1,15 @@
 $white: white;
 $brown: #8f7f71;
+$brown-2: #555;
+$brown-3: #222;
+$box-shadow: rgba(34, 34, 34, 0.2);
+$border-color: rgb(250, 100, 0, 0.22);
 
 :export {
   white: $white;
   brown: $brown;
+  box-shadow: $box-shadow;
+  brown-2: $brown-2;
+  brown-3: $brown-3;
+  border-color: $border-color;
 }

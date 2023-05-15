@@ -1,11 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client"
 
-import { useStoreWeather } from '@/store/useStoreWeather'
-import styles from './Home.module.scss'
-import ResultsWeather from './components/ResultsWeather/ResultsWeather'
-import SearchBox from './components/SearchBox/SearchBox'
 import { useEffect } from 'react'
+
+import styles from './Home.module.scss'
+
+import { useStoreWeather } from '@/store/useStoreWeather'
+import { SearchBox, ScreenWeather, FavoriteCities } from './components'
 
 const Home = () => {
   const { cityQuery, setCityQuery } = useStoreWeather()
@@ -19,8 +20,9 @@ const Home = () => {
       <div className={styles.home__container}>
         <div className={styles.home__title}>Wheater Ionix</div>
         <SearchBox />
+        <FavoriteCities />
         {
-          cityQuery && <ResultsWeather query={cityQuery} />
+          cityQuery && <ScreenWeather query={cityQuery} />
         }
       </div>
     </div>

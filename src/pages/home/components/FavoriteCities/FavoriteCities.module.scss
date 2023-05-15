@@ -1,0 +1,21 @@
+@use 'variables' as var;
+
+.cities {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px var.$box-shadow;
+  color: var.$brown;
+  backdrop-filter: blur(33px);
+  background-blend-mode: overlay;
+
+  span {
+    cursor: pointer;
+    color: var.$white;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

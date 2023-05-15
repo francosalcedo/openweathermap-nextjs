@@ -10,15 +10,22 @@ import ThunderstormIcon from 'public/images/weather/thunderstorm.svg';
 import Image, { StaticImageData } from 'next/image'
 
 interface IWeatherIconProps {
-  code: number;
+  code: number
+  width?: number
+  height?: number
 }
 
 interface StaticRequire {
-  default: StaticImageData;
+  default: StaticImageData
 }
 
 const WeatherIcon: React.FC<IWeatherIconProps> = (props) => {
   let Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+
+  const {
+    width = 100,
+    height = 100
+  } = props
 
   switch (props.code) {
     // Clear
@@ -113,6 +120,6 @@ const WeatherIcon: React.FC<IWeatherIconProps> = (props) => {
     default:
       Icon = SunnyIcon;
   }
-  return <Image src={Icon as unknown as StaticRequire} width={100} height={100} alt="" />
+  return <Image src={Icon as unknown as StaticRequire} width={width} height={height} alt="" />
 }
-export default WeatherIcon
+export { WeatherIcon }

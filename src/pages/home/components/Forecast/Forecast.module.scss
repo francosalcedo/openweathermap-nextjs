@@ -1,0 +1,42 @@
+@use "variables" as var;
+
+.forecast {
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 830px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 15px var.$box-shadow;
+    backdrop-filter: blur(33px);
+    background-blend-mode: overlay;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      width: 0.5em;
+      height: 0.5em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var.$brown-2;
+      border-radius: 0.5em;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var.$brown-3;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  &__days {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

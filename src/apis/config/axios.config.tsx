@@ -9,7 +9,8 @@ export function createAxiosInstance(): AxiosInstance {
   instance.interceptors.request.use((config) => {
     config.params = {
       ...config.params,
-      appid: process.env.NEXT_PUBLIC_API_KEY
+      appid: process.env.NEXT_PUBLIC_API_KEY,
+      lang: 'es'
     };
 
     return config;

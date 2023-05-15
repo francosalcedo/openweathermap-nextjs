@@ -3,7 +3,13 @@ export interface Forecast {
   message: number
   cnt: number
   list: List[]
+  days?: ForecastDay[]
   city: City
+}
+
+export type ForecastDay = {
+  day: string;
+  list: List[];
 }
 
 export interface List {
@@ -15,7 +21,7 @@ export interface List {
   visibility: number
   pop: number
   sys: Sys
-  dt_txt: string
+  dt_txt: Date
 }
 
 export interface Main {
