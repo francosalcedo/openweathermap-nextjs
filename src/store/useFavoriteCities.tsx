@@ -19,7 +19,7 @@ const startedFavoriteCities = [
 export const useFavoriteCities = create<FavoriteCitiesState>()(
   persist(
     (set, get) => ({
-      cities: JSON.parse(localStorage.getItem(nameStore) as string) ?? startedFavoriteCities,
+      cities: [],
       hasCity: (city) => {
         return get().cities.includes(city)
       },
@@ -34,6 +34,13 @@ export const useFavoriteCities = create<FavoriteCitiesState>()(
     {
       name: nameStore,
       storage: createJSONStorage(() => localStorage),
+      onRehydrateStorage(state) {
+        return (state, error) => {
+          if (!error && state?.cities.length === 0) {
+            startedFavoriteCities.forEach(city => state?.cities.push(city))
+          }
+        }
+      },
     }
   )
 )
