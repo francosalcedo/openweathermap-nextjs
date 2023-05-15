@@ -1,0 +1,36 @@
+name: Weather Api React Nextjs App
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Install
+      run: npm install
+
+    - name: Test
+      run: npm run test
+
+    - name: Build and Test
+      run: npm run build
+
+    - name: Login to Dockerhub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_PASSWORD }}
+        password: ${{ secrets.DOCKER_USERNAME }}
+
+    - name: Build and Publish Docker Image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        repositoru: francosalcedo/openweathermap-nextjs
+        tags: weather-nextjs-francosalcedo:${{ github.run_number }}
