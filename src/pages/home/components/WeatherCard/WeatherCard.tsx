@@ -1,3 +1,5 @@
+'use client'
+
 import styles from './WeatherCard.module.scss'
 
 import Image from 'next/image'
@@ -7,14 +9,20 @@ import LowIcon from 'public/images/icons/low-icon.svg';
 
 import { CityWeather } from '@/models/weather.model'
 
-import { WeatherIcon } from '@/components';
-import { WeatherItems, FavoriteStart } from '@/pages/home/components';
+import WeatherIcon from '@/components/WeatherIcon/WeatherIcon';
+import WeatherItems from '@/pages/home/components/WeatherItems/WeatherItems';
+import FavoriteStart from '@/pages/home/components/FavoriteStart/FavoriteStart';
 
 interface WeatherCardProps {
   city: CityWeather
 }
 
 const WeatherCard: React.FC<WeatherCardProps> = ({ city }) => {
+
+  if (!city) {
+    return null;
+  }
+
   return (
     <div className={styles.weather}>
       <div className={styles.weather__container}>
@@ -44,4 +52,4 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ city }) => {
   )
 }
 
-export { WeatherCard }
+export default WeatherCard

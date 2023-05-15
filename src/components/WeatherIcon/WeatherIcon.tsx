@@ -122,4 +122,4 @@ const WeatherIcon: React.FC<IWeatherIconProps> = (props) => {
   }
   return <Image src={Icon as unknown as StaticRequire} width={width} height={height} alt="" />
 }
-export { WeatherIcon }
+export default WeatherIcon

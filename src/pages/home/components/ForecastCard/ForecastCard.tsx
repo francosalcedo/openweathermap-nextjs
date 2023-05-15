@@ -1,8 +1,9 @@
+'use client'
 import styles from './ForecastCard.module.scss'
 
 import Image from 'next/image'
 import HourIcon from 'public/images/icons/hour-icon.svg';
-import { WeatherIcon } from '@/components';
+import WeatherIcon from '@/components/WeatherIcon/WeatherIcon';
 
 import { ForecastDay } from "@/models/forecast.model"
 
@@ -17,6 +18,10 @@ const hourPrev = (date: Date) => {
   const datePrev = date.getHours() === 0 ? 24 : date.getHours()
   return `${(datePrev - 3).toString().padStart(2, '0')} - ${(date.getHours()).toString().padStart(2, '0')}`
 }
+
+  if (!day) {
+    return null;
+  }
 
   return (
     <div className={styles.day}>

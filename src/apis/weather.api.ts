@@ -4,7 +4,7 @@ import { createAxiosInstance } from '@/apis/config/axios.config'
 import {
   findByCityDto,
   findForecastByCityDto
-} from '@/dtos'
+} from '@/dtos/weather.dto'
 
 export class WeatherApi {
   api: AxiosInstance

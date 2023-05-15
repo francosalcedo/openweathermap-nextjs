@@ -1,12 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-"use client"
+'use client'
 
 import { useEffect } from 'react'
 
 import styles from './Home.module.scss'
 
 import { useStoreWeather } from '@/store/useStoreWeather'
-import { SearchBox, ScreenWeather, FavoriteCities } from './components'
+import FavoriteCities from './components/FavoriteCities/FavoriteCities'
+import SearchBox from './components/SearchBox/SearchBox'
+import ScreenWeather from './components/ScreenWeather/ScreenWeather'
 
 const Home = () => {
   const { cityQuery, setCityQuery } = useStoreWeather()

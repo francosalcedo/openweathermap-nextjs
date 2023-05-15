@@ -7,8 +7,10 @@ import styles from './ScreenWeather.module.scss'
 import { useCityWeather } from '@/hooks/weather/useCityWeather'
 import { useStoreWeather } from '@/store/useStoreWeather'
 
-import { Loader, ErrorMessage } from '@/components'
-import { Forecast, WeatherCard } from '@/pages/home/components'
+import ErrorMessage from '@/components/ErrorMessage/ErrorMessage'
+import Loader from '@/components/Loader/Loader'
+import WeatherCard from '@/pages/home/components/WeatherCard/WeatherCard'
+import Forecast from '@/pages/home/components/Forecast/Forecast'
 
 interface ScreenWeatherrops {
   query: string
@@ -44,4 +46,4 @@ const ScreenWeather: React.FC<ScreenWeatherrops> = ({ query }) => {
   )
 }
 
-export { ScreenWeather }
+export default ScreenWeather

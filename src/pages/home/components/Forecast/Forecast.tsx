@@ -7,8 +7,9 @@ import styles from './Forecast.module.scss'
 import { useForecastWeather } from '@/hooks/weather/useForecastWeather'
 import { useStoreWeather } from '@/store/useStoreWeather'
 
-import { Loader, ErrorMessage } from '@/components'
-import ForecastCard from '../ForecastCard/ForecastCard'
+import ErrorMessage from '@/components/ErrorMessage/ErrorMessage'
+import Loader from '@/components/Loader/Loader'
+import ForecastCard from '@/pages/home/components/ForecastCard/ForecastCard'
 
 interface ForecastProps {
   query: string
@@ -55,4 +56,4 @@ const Forecast: React.FC<ForecastProps> = ({ query }) => {
   )
 }
 
-export { Forecast }
+export default Forecast

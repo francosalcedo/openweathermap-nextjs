@@ -37,4 +37,4 @@ const SearchBox = () => {
   )
 }
 
-export { SearchBox }
+export default SearchBox

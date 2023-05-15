@@ -26,4 +26,4 @@ const WeatherItems: React.FC<WeatherItemsProps> = (props) => {
   )
 }
 
-export { WeatherItems }
+export default WeatherItems

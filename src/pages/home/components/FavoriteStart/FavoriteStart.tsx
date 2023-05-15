@@ -29,4 +29,4 @@ const FavoriteStart: React.FC<FavoriteStartProps> = ({ city }) => {
   );
 }
 
-export { FavoriteStart }
+export default FavoriteStart

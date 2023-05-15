@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import Home from '@/pages/home/Home.page'
+import { describe } from "@jest/globals"
 
 describe('Home', () => {
   it('Render Home', () => {

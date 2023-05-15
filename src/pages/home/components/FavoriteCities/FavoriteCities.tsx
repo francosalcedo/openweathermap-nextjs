@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import styles from './FavoriteCities.module.scss'
 
@@ -15,7 +15,6 @@ const FavoriteCities = () => {
     setList(cities)
   }, [cities])
 
-
   return (
     <>
       {
@@ -30,4 +29,4 @@ const FavoriteCities = () => {
   )
 }
 
-export { FavoriteCities }
+export default FavoriteCities
